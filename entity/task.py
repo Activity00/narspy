@@ -6,7 +6,8 @@ from language.term import Term
 class Task(Term):
     """
     A task to be processed, consists of a Sentence and a BudgetValue.
-    A task references its parent and an optional causal factor (usually an Operation instance).  These are implemented as WeakReference to allow forgetting via the
+    A task references its parent and an optional causal factor (usually an Operation instance).
+    These are implemented as WeakReference to allow forgetting via the
     garbage collection process.  Otherwise, Task ancestry would grow unbounded,
     violating the assumption of insufficient resources (AIKR).
     """
