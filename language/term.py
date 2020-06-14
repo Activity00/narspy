@@ -1,3 +1,6 @@
+from typing import Dict
+
+
 class Term:
     """
     Term is the basic component of Narsese, and the object of processing in NARS.
@@ -6,13 +9,11 @@ class Term:
     It is not linked in the Term, because a Concept may be forgot while the Term
     exists. Multiple objects may represent the same Term.
     """
-    atoms = {}  # {string: Term}
+    atoms: Dict[str: 'Term'] = {}
 
     def __init__(self, name):
         self.name = name
 
     def get(self, name):
-        term = self.atoms.get(name)
-        if term:
-            return term
+        return self.atoms.get(name)
 

@@ -1,9 +1,8 @@
 from entity.budgetvalue import BudgetValue
 from entity.sentence import Sentence
-from language.term import Term
 
 
-class Task(Term):
+class Task:
     """
     A task to be processed, consists of a Sentence and a BudgetValue.
     A task references its parent and an optional causal factor (usually an Operation instance).

@@ -26,8 +26,7 @@ concepts (including Cbird). The difference is just that a term is a symbol,
 while a concept is a data structure named by a term.
 
 """
-from entity.budgetvalue import BudgetValue
-from entity.item import Item
+from entity import Item
 from language.term import Term
 from storage.bag import Bag
 
@@ -36,10 +35,15 @@ class Concept(Item):
     """
     Concept as defined by the NARS-theory
     Concepts are used to keep track of interrelated sentences
-
     """
 
-    def __int__(self, term: Term, budget_value: BudgetValue):
+    def __int__(self, term: Term):
         self.term = term  # The term is the unique ID of the concept
         self.beliefs = Bag()
         self.tasks = Bag()
+
+    def get_a_belief(self):
+        return self.beliefs.get()
+
+    def get_a_task(self):
+        return self.tasks.get()

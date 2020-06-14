@@ -1,9 +1,9 @@
-from language.term import Term
 
 
 class Sentence:
     """
     A Sentence is used as the premises and conclusions of all inference rules.
+    input sentence (in Narsese) is either a judgment or a question.
     """
-    def __init__(self, term: Term, punctuation:str, new_truth: TruthValue, new_stamp:Stamp):
+    def __init__(self):
         pass

@@ -1,6 +1,3 @@
-from abc import abstractmethod
-
-from entity.budgetvalue import BudgetValue
 
 
 class Item:
@@ -10,24 +7,10 @@ class Item:
     It has a key and a budget. Cannot be cloned
     """
 
-    def __init__(self, name, budget: BudgetValue = None):
-        self.name = name
-        self.budget = budget
+    def __init__(self, key, priority: int):
+        self.key = key
+        self.priority: int = priority  # [0, 1]
 
-    @abstractmethod
-    def name(self):
+    def merge(self, item: 'Item'):
+        # TODO merge two item
         pass
-
-    @property
-    def priority(self):
-        return self.budget.priority
-
-    @priority.setter
-    def priority(self, value: float):
-        self.budget.priority = value
-
-    def inc_priority(self, v):
-        self.budget.inc_priority(v)
-
-    def dec_priority(self, v):
-        self.budget.dec_priority(v)
